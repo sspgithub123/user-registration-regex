@@ -54,6 +54,19 @@ public class UserRegistration {
         else
             System.out.println("Please Enter a Valid Email");
     }
+    public void mobileNum() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Mobile number : ");
+        String mobileNum = sc.nextLine();
+        /*
+         * As a User needs to check the regex pattern for the MobileNumber
+         */
+        boolean check = Pattern.matches("[+91]{3} [6789]{1}[0-9]{9}", mobileNum);
+        if (check)
+            System.out.println("Perfect! Mobile #Num");
+        else
+            System.out.println("Please Enter a Valid Mobile Number");
+    }
 
 
     public static void main(String[] args) {
@@ -67,6 +80,7 @@ public class UserRegistration {
         user.firstNameCheck();
         user.lastNameCheck();
         user.email();
+        user.mobileNum();
     }
 
 }
