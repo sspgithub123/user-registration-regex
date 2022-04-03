@@ -41,6 +41,19 @@ public class UserRegistration {
         else
             System.out.println("Please Enter a Valid Last Name with Only \"One Starting Capital\" latter");
     }
+    public void email() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Email of User: ");
+        String eMail = sc.next();
+        /*
+         * As a User needs to check the regex pattern for the emailId
+         */
+        boolean check = Pattern.matches("^[a-z]{1,}[0-9]{1,}@[a-z]{1,}[.]com", eMail);
+        if (check)
+            System.out.println("Perfect! #Email!");
+        else
+            System.out.println("Please Enter a Valid Email");
+    }
 
 
     public static void main(String[] args) {
@@ -53,6 +66,7 @@ public class UserRegistration {
          */
         user.firstNameCheck();
         user.lastNameCheck();
+        user.email();
     }
 
 }
