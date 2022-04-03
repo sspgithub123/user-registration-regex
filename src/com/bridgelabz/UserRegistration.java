@@ -16,6 +16,7 @@ public class UserRegistration {
     public void firstNameCheck() {
         System.out.print("Enter First Name of User: ");
         String fName = sc.next();
+
         /*
          * As a User needs to check the regex pattern for the firstName
          */
@@ -24,6 +25,21 @@ public class UserRegistration {
             System.out.println("Perfect! First #Name");
         else
             System.out.println("Please Enter a Valid First name with Only \"One Starting Capital\" latter");
+    }
+
+    public void lastNameCheck() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Last Name of User: ");
+        String lName = sc.next();
+
+        /*
+         * As a User needs to check the regex pattern for the laststName
+         */
+        boolean check = Pattern.matches("^[A-Z]{1}[a-z]{2,}$", lName);
+        if (check)
+            System.out.println("Perfect! Last #Name");
+        else
+            System.out.println("Please Enter a Valid Last Name with Only \"One Starting Capital\" latter");
     }
 
 
@@ -36,5 +52,7 @@ public class UserRegistration {
          * A method Calling (Function)
          */
         user.firstNameCheck();
+        user.lastNameCheck();
     }
+
 }
